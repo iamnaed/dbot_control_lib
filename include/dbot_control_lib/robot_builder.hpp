@@ -3,11 +3,6 @@
 
 #include <string>
 
-#include "linear_algebra.hpp"
-#include "cartesian.hpp"
-#include "joint_angle.hpp"
-#include "links.hpp"
-#include "joint_configuration.hpp"
 #include "robot.hpp"
 
 namespace dbot_control_lib
