@@ -67,6 +67,11 @@ namespace dbot_control_lib
         return jls;
     }
 
+    void Links::set_tcp(const Cartesian &tcp)
+    {
+        link_map_.at(LinkKey::Tcp) = tcp;
+    }
+
     std::string Links::to_string() const
     {
         std::stringstream ss;
@@ -76,8 +81,7 @@ namespace dbot_control_lib
             auto key = kv.first;
             auto val = kv.second;
             auto key_name = linkkey_to_string_map_.at(key);
-            ss << "\t" << key_name << "\n";
-            ss << "\t\t" << val.to_string() << "\n";
+            ss << "\t" << key_name << "\t" << val.to_string();
         }
 
         return ss.str();

@@ -33,9 +33,10 @@ namespace dbot_control_lib
     std::string Cartesian::to_string() const
     {
         std::stringstream ss;
-        ss << "Cartesian ";
-        ss << "Translation: {" << pos_.x() << ", " << pos_.y() << ", " << pos_.z() << "} ";
-        ss << "Quaternion: {" << rot_ << "} \n";
+        ss << "Cartesian [ ";
+        ss << "Translation: {" << pos_.x() << ", " << pos_.y() << ", " << pos_.z() << "}\t";
+        //ss << "Translation: {" << pos_.vector().transpose().format(CleanMatrixFormat) << "} \t";
+        ss << "Quaternion: {" << rot_ << "} ]\n";
         return ss.str();
     }
 }

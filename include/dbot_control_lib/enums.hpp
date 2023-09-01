@@ -1,13 +1,6 @@
 #ifndef DBOT_CONTROL_LIB_ENUMS__HPP
 #define DBOT_CONTROL_LIB_ENUMS__HPP
 
-#include <string>
-#include <eigen/eigen.hpp>
-#include <array>
-#include <vector>
-
-#include "trajectory_point.hpp"
-
 namespace dbot_control_lib
 {
 

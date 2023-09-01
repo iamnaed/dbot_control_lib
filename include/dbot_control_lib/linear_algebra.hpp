@@ -53,6 +53,34 @@ namespace dbot_control_lib
      *
      */
     typedef Eigen::Translation3d Translation3d;
+
+    /**
+     * @brief
+     *
+     * @param x
+     * @param y
+     * @param z
+     * @return Quaterniond
+     */
+    inline Quaterniond euler_zyx_to_quaternion(double x, double y, double z)
+    {
+        Quaterniond q;
+        q = AngleAxisd(z, Vector3d::UnitZ()) * AngleAxisd(y, Vector3d::UnitY()) * AngleAxisd(x, Vector3d::UnitX());
+        return q;
+    }
+
+    /**
+     * @brief
+     *
+     * @param euler
+     * @return Quaterniond
+     */
+    inline Quaterniond euler_zyx_to_quaternion(Vector3d euler)
+    {
+        return euler_zyx_to_quaternion(euler.x(), euler.y(), euler.z());
+    }
+
+    inline Eigen::IOFormat CleanMatrixFormat(4, 0, ", ", "\n", "[", "]");
 }
 
 #endif // DBOT_CONTROL_LIB_LINEAR_ALGEBRA__HPP

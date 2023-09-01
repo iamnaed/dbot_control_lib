@@ -15,7 +15,7 @@ namespace dbot_control_lib
     class Robot
     {
     public:
-        Robot(const std::string &name, const Links &links, const Cartesian &tcp);
+        Robot(const std::string &name, const Links &links);
         Cartesian get_forward_kinematics() const;
         Cartesian get_forward_kinematics(const JointAngle &ja) const;
         Cartesian get_forward_kinematics(const JointAngle &ja, const Cartesian &tcp) const;
@@ -24,6 +24,7 @@ namespace dbot_control_lib
         bool try_get_inverse_kinematics(const Cartesian &target, JointConfiguration &result) const;
         bool try_get_inverse_kinematics(const Cartesian &target, const Cartesian &tcp, JointConfiguration &result) const;
         void set_joints(const JointAngle &ja);
+        void set_tcp(const Cartesian &tcp);
         std::string to_string() const;
 
     private:

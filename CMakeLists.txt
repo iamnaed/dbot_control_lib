@@ -15,7 +15,12 @@ add_library(
   dbot_control_lib
   SHARED
   src/dbot_control.cpp
+  src/robot.cpp
+  src/robot_builder.cpp
+  src/links.cpp
+  src/joint_angle.cpp
   src/cartesian.cpp
+  src/joint_configuration.cpp
 )
 
 target_compile_features(
@@ -53,5 +58,8 @@ ament_export_targets(
   export_dbot_control_lib
   HAS_LIBRARY_TARGET
 )
+
+# ament_export_dependencies(eigen3_cmake_module)
+# ament_export_dependencies(Eigen3)
 
 ament_package()

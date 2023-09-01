@@ -10,7 +10,7 @@ namespace dbot_control_lib
      * @param links
      * @param tcp
      */
-    Robot::Robot(const std::string &name, const Links &links, const Cartesian &tcp) : name_(name), links_(links)
+    Robot::Robot(const std::string &name, const Links &links) : name_(name), links_(links)
     {
     }
 
@@ -118,6 +118,10 @@ namespace dbot_control_lib
      */
     bool Robot::try_get_inverse_kinematics(const Cartesian &target, const Cartesian &tcp, JointConfiguration &result) const
     {
+        (void)target;
+        (void)tcp;
+        (void)result;
+        return false;
     }
 
     /**
@@ -133,12 +137,23 @@ namespace dbot_control_lib
     /**
      * @brief
      *
+     * @param ja
+     */
+    void Robot::set_tcp(const Cartesian &tcp)
+    {
+        links_.set_tcp(tcp);
+    }
+
+    /**
+     * @brief
+     *
      * @return std::string
      */
     std::string Robot::to_string() const
     {
         std::stringstream ss;
         ss << "Robot: {" << name_ << "} \n";
+        ss << links_.to_string() << "\n";
         return ss.str();
     }
 }

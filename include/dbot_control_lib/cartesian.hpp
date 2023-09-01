@@ -2,6 +2,7 @@
 #define DBOT_CONTROL_LIB_CARTESIAN__HPP
 
 #include <string>
+
 #include "linear_algebra.hpp"
 
 namespace dbot_control_lib
