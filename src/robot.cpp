@@ -121,6 +121,8 @@ namespace dbot_control_lib
         (void)target;
         (void)tcp;
         (void)result;
+
+
         return false;
     }
 
@@ -155,5 +157,96 @@ namespace dbot_control_lib
         ss << "Robot: {" << name_ << "} \n";
         ss << links_.to_string() << "\n";
         return ss.str();
+    }
+
+    /**
+     * @brief 
+     * 
+     * @param target 
+     * @return Cartesian 
+     */
+    Cartesian Robot::solve_wrist(Cartesian target)
+    {
+        return Cartesian();
+    }
+
+    /**
+     * @brief 
+     * 
+     * @param wrist 
+     * @return std::vector<double> 
+     */
+    std::vector<double> Robot::solve_joint0(Cartesian wrist)
+    {
+        return std::vector<double>();
+    }
+
+    /**
+     * @brief 
+     * 
+     * @param j0 
+     * @param wrist 
+     * @return std::vector<double> 
+     */
+    std::vector<double> Robot::solve_joint1(double j0, Cartesian wrist)
+    {
+        return std::vector<double>();
+    }
+
+    /**
+     * @brief 
+     * 
+     * @param j0 
+     * @param j1 
+     * @param wrist 
+     * @return std::vector<double> 
+     */
+    std::vector<double> Robot::solve_joint2(double j0, double j1, Cartesian wrist)
+    {
+        return std::vector<double>();
+    }
+
+    /**
+     * @brief 
+     * 
+     * @param j0 
+     * @param j1 
+     * @param j2 
+     * @param j4 
+     * @param wrist 
+     * @return std::vector<double> 
+     */
+    std::vector<double> Robot::solve_joint3(double j0, double j1, double j2, double j4, Cartesian wrist)
+    {
+        return std::vector<double>();
+    }
+
+    /**
+     * @brief 
+     * 
+     * @param j0 
+     * @param j1 
+     * @param j2 
+     * @param wrist 
+     * @return std::vector<double> 
+     */
+    std::vector<double> Robot::solve_joint4(double j0, double j1, double j2, Cartesian wrist)
+    {
+        return std::vector<double>();
+    }
+
+    /**
+     * @brief 
+     * 
+     * @param j0 
+     * @param j1 
+     * @param j2 
+     * @param j4 
+     * @param wrist 
+     * @return std::vector<double> 
+     */
+    std::vector<double> Robot::solve_joint5(double j0, double j1, double j2, double j4, Cartesian wrist)
+    {
+        return std::vector<double>();
     }
 }

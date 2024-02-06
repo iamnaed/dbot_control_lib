@@ -28,6 +28,15 @@ namespace dbot_control_lib
         std::string to_string() const;
 
     private:
+        Cartesian solve_wrist(Cartesian target);
+        std::vector<double> solve_joint0(Cartesian wrist);
+        std::vector<double> solve_joint1(double j0, Cartesian wrist);
+        std::vector<double> solve_joint2(double j0, double j1, Cartesian wrist);
+        std::vector<double> solve_joint3(double j0, double j1, double j2, double j4, Cartesian wrist);
+        std::vector<double> solve_joint4(double j0, double j1, double j2, Cartesian wrist);
+        std::vector<double> solve_joint5(double j0, double j1, double j2, double j4, Cartesian wrist);
+
+    private:
         std::string name_;
         Links links_;
         JointAngle ja_;
